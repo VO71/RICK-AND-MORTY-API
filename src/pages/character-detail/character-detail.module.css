@@ -1,0 +1,56 @@
+.container {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.backButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.backButton:hover {
+  background-color: #0056b3;
+}
+
+.cardDetail {
+  background-color: #3c3e44;
+  border-radius: 10px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.info {
+  padding: 30px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.name {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .cardDetail {
+    flex-direction: column;
+  }
+  .image, .info {
+    width: 100%;
+  }
+}
