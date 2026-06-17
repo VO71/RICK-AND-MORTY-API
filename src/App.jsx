@@ -7,14 +7,21 @@ import styles from './App.module.css'
 function App() {
   return (
     <>
+      
+
       <nav className={styles.navbar}>
-        <Link to="/" className={styles.navLink}>
-          Inicio
-        </Link>
-        <Link to="/favorites" className={styles.navLinkFav}>
-          Mis Favoritos ⭐
-        </Link>
+        <h1 className={styles.navTitle}>Rick and Morty API</h1>
+
+        <div className={styles.navLinks}>
+          <Link to="/" className={styles.navLink}>
+            Inicio
+          </Link>
+          <Link to="/favorites" className={styles.navLinkFav}>
+            Mis Favoritos ⭐
+          </Link>
+        </div>
       </nav>
+
 
       <Routes>
         <Route path="/" element={<Home />} />

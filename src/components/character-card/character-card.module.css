@@ -1,11 +1,11 @@
 .card {
-  background-color: #3c3e44;
+  background-color: #070044a1;
   border-radius: 10px;
   overflow: hidden; 
   width: 250px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
 }
 
 .image {
@@ -29,9 +29,9 @@
 }
 
 .favButton {
-  background-color: #272b33;
+  background-color: #243961;
   color: white;
-  border: 1px solid #555;
+  border: 1px solid #000000;
   padding: 12px;
   margin: 10px;
   border-radius: 5px;
@@ -40,12 +40,15 @@
   transition: all 0.3s ease;
 }
 
-.favButton:hover {
-  background-color: #444;
+.favActive {
+  background-color: #FBBF24;
+  color: #000000; 
 }
 
-.favActive {
-  background-color: #f5c518; /* Color amarillo/dorado */
-  color: black;
-  border: 1px solid #f5c518;
+.favActive .star {
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
 }

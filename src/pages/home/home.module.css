@@ -24,7 +24,6 @@
   border-radius: 8px;
   border: none;
   outline: none;
-  color: black;
 }
 
 .pagination {
@@ -46,7 +45,7 @@
 }
 
 .btnEnabled {
-  background-color: #007bff;
+  background-color: #004690;
   cursor: pointer;
 }
 

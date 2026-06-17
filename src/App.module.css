@@ -1,11 +1,23 @@
 .navbar {
-  padding: 20px;
+  padding: 15px 40px; 
   background-color: #122752;
   display: flex;
-  gap: 30px;
-  justify-content: center;
+  justify-content: space-between; 
   align-items: center;
-  box-shadow: 0 2px 5px rgba(12, 16, 86, 0.2);
+  box-shadow: 0 2px 5px rgba(12,16,86,0.2);
+}
+
+.navTitle {
+  color: white;
+  margin: 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
 .navLink {
@@ -13,11 +25,14 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
-  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
 }
 
 .navLink:hover {
-  color: #007bff;
+  color: #0d70c7;
+   transform: scale(1.05); 
 }
 
 .navLinkFav {

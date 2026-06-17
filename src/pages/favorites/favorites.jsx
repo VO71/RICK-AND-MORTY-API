@@ -10,7 +10,7 @@ export function Favorites() {
       <h1 style={{ textAlign: 'center', marginBottom: '40px' }}>Mis Personajes Favoritos</h1>
       
       {favorites.length === 0 ? (
-        <p style={{ textAlign: 'center', fontSize: '1.2rem', color: '#9e9e9e' }}>
+        <p style={{ textAlign: 'center', fontSize: '1.2rem', color: '#f2f2f2' }}>
           Aun no tienes personajes favoritos guardados.
         </p>
       ) : (

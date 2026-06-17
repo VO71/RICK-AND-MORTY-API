@@ -28,7 +28,10 @@ export function CharacterCard({ character }) {
         onClick={() => toggleFavorite(character)} 
         className={`${styles.favButton} ${isFavorite ? styles.favActive : ''}`}
       >
-        {isFavorite ? '⭐ Quitar Favorito' : '☆ Agregar a Favoritos'}
+        <span className={styles.star}>
+          {isFavorite ? '⭐' : '☆'}
+        </span>
+        {isFavorite ? ' Quitar Favorito' : ' Agregar a Favoritos'}
       </button>
     </article>
   );

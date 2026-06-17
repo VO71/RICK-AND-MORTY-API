@@ -30,12 +30,11 @@ export function Home() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Rick and Morty API</h1>
 
       <div className={styles.headerControls}>
         <input 
           type="text" 
-          placeholder="Buscar personaje..." 
+          placeholder="Buscar personaje" 
           value={search}
           onChange={handleSearch}
           className={styles.searchInput}
