@@ -8,12 +8,10 @@ export function Home() {
   const [page, setPage] = useState(1)
   const [info, setInfo] = useState({})
 
-  // 1. Estados para los filtros desplegables
   const [statusFilter, setStatusFilter] = useState('')
   const [genderFilter, setGenderFilter] = useState('')
 
   useEffect(() => {
-    // 2. Petición a la API incluyendo estado y género
     fetch(`https://rickandmortyapi.com/api/character/?name=${search}&page=${page}&status=${statusFilter}&gender=${genderFilter}`)
       .then((response) => response.json())
       .then((data) => {
@@ -26,14 +24,13 @@ export function Home() {
         }
       })
       .catch((error) => console.error('Error al traer los datos:', error))
-  }, [search, page, statusFilter, genderFilter]) // 3. Se actualiza cuando cualquiera de estos cambia
+  }, [search, page, statusFilter, genderFilter]) 
 
   const handleSearch = (e) => {
     setSearch(e.target.value)
     setPage(1) 
   }
 
-  // 4. Funciones para resetear la página al cambiar un filtro
   const handleStatusChange = (e) => {
     setStatusFilter(e.target.value)
     setPage(1)
@@ -49,7 +46,6 @@ export function Home() {
 
       <div className={styles.headerControls}>
         
-        {/* Contenedor que agrupa el buscador y los filtros */}
         <div className={styles.filtersContainer}>
           <input 
             type="text" 
@@ -83,7 +79,6 @@ export function Home() {
           </select>
         </div>
 
-        {/* Paginación */}
         <div className={styles.pagination}>
           <button 
             disabled={!info.prev}
