@@ -8,8 +8,13 @@ export function Home() {
   const [page, setPage] = useState(1)
   const [info, setInfo] = useState({})
 
+  // 1. Estados para los filtros desplegables
+  const [statusFilter, setStatusFilter] = useState('')
+  const [genderFilter, setGenderFilter] = useState('')
+
   useEffect(() => {
-    fetch(`https://rickandmortyapi.com/api/character/?name=${search}&page=${page}`)
+    // 2. Petición a la API incluyendo estado y género
+    fetch(`https://rickandmortyapi.com/api/character/?name=${search}&page=${page}&status=${statusFilter}&gender=${genderFilter}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.results) {
@@ -21,25 +26,64 @@ export function Home() {
         }
       })
       .catch((error) => console.error('Error al traer los datos:', error))
-  }, [search, page])
+  }, [search, page, statusFilter, genderFilter]) // 3. Se actualiza cuando cualquiera de estos cambia
 
   const handleSearch = (e) => {
     setSearch(e.target.value)
     setPage(1) 
   }
 
+  // 4. Funciones para resetear la página al cambiar un filtro
+  const handleStatusChange = (e) => {
+    setStatusFilter(e.target.value)
+    setPage(1)
+  }
+
+  const handleGenderChange = (e) => {
+    setGenderFilter(e.target.value)
+    setPage(1)
+  }
+
   return (
     <div className={styles.container}>
 
       <div className={styles.headerControls}>
-        <input 
-          type="text" 
-          placeholder="Buscar personaje" 
-          value={search}
-          onChange={handleSearch}
-          className={styles.searchInput}
-        />
+        
+        {/* Contenedor que agrupa el buscador y los filtros */}
+        <div className={styles.filtersContainer}>
+          <input 
+            type="text" 
+            placeholder="Buscar personaje" 
+            value={search}
+            onChange={handleSearch}
+            className={styles.searchInput}
+          />
 
+          <select 
+            value={statusFilter} 
+            onChange={handleStatusChange} 
+            className={styles.filterSelect}
+          >
+            <option value="">Estado (todos)</option>
+            <option value="alive">Vivo</option>
+            <option value="dead">Muerto</option>
+            <option value="unknown">Desconocido</option>
+          </select>
+
+          <select 
+            value={genderFilter} 
+            onChange={handleGenderChange} 
+            className={styles.filterSelect}
+          >
+            <option value="">Género (todos)</option>
+            <option value="female">Femenino</option>
+            <option value="male">Masculino</option>
+            <option value="genderless">Sin género</option>
+            <option value="unknown">Desconocido</option>
+          </select>
+        </div>
+
+        {/* Paginación */}
         <div className={styles.pagination}>
           <button 
             disabled={!info.prev}

@@ -60,3 +60,20 @@
   gap: 20px;
   justify-content: center;
 }
+
+.filtersContainer {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; 
+}
+
+.filterSelect {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #272b33;
+  color: white;
+  cursor: pointer;
+}
